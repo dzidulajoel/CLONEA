@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@layer base {
+
+        html,
+        .scroll-container {
+                scroll-behavior: smooth;
+                overflow: auto;
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+        }
+
+        html::-webkit-scrollbar,
+        .scroll-container::-webkit-scrollbar {
+                display: none;
+        }
+}
+
+@font-face {
+        font-family: 'NowLight';
+        src: url('./assets/fonts/Now-Light.woff2') format('woff2');
+        font-weight: 300;
+        font-style: normal;
+        font-display: swap;
+}
+
+@font-face {
+        font-family: 'NowRegular';
+        src: url('./assets/fonts/Aileron-Regular.woff2') format('woff2');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+}
+
+@font-face {
+        font-family: 'Retro';
+        src: url('./assets/fonts/Retro\ Floral.woff2') format('woff2');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+}
+
+@theme {
+        --font-info: 'NowLight', sans-serif;
+        --font-body: 'NowRegular', sans-serif;
+        --font-inter: 'Inter', sans-serif;
+        --font-nom: 'Retro', sans-serif;
+}
+
+
+/* masque la scrollbar partout */
+.no-scrollbar::-webkit-scrollbar {
+        display: none;
+}
+
+.no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+}
+
+.shd{
+        box-shadow: rgba(0, 0, 0, 0.06) 0px 1px 4px;
+}
