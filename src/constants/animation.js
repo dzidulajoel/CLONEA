@@ -19,4 +19,5 @@ export const ANIMATION = {
       },
     },
   },
+
 };

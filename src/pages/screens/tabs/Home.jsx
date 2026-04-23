@@ -62,7 +62,7 @@ function Home() {
                                         <h2 className='font-body text-md font-bold' style={{ color: COLORS.BLACK }}>Créations récentes</h2>
                                         <Link to="" className='font-body text-sm underline' style={{ color: COLORS.GRAY }}>Voir plus</Link>
                                 </div>
-                                <div ref={containerRef} className="overflow-hidden w-full pb-20">
+                                <div ref={containerRef} className="overflow-hidden w-full pb-24">
                                         <motion.div ref={trackRef} className="flex gap-3" drag="x" dragConstraints={{ left: -dragWidth, right: 0 }}>
                                                 {data.map((item) => (
                                                         <div key={item} className="min-w-[150px] flex-shrink-0">

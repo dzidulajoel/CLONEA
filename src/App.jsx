@@ -34,71 +34,72 @@ const Tabs = lazy(() => import("./pages/layouts/Tabs"));
 // ── Loader ────────────────────────────────
 const PageLoader = () => (
     <div className="flex items-center justify-center min-h-screen">
-    Loading...
-  </div>
+        Loading...
+    </div>
 );
 
 // ── ROUTER ────────────────────────────────
 // eslint-disable-next-line react-refresh/only-export-components
 export const router = createBrowserRouter([
-  // redirect
-  {
-    path: "/",
-    element: <Navigate to="/clonea" replace />,
-  },
+    // redirect
+    {
+        path: "/",
+        element: <Navigate to="/clonea" replace />,
+    },
 
-  // SPLASH
-  {
-    path: "/clonea",
-    element: <Welcome />,
-  },
+    // SPLASH
+    {
+        path: "/clonea",
+        element: <Welcome />,
+    },
 
-  // AUTH (login / signup)
-  {
-    path: "/clonea/auth",
-    element: <Connexion />,
-    children: [
-      { path: "login", element: <Login /> },
-      { path: "signup", element: <Signup /> },
-    ],
-  },
+    // AUTH (login / signup)
+    {
+        path: "/clonea/auth",
+        element: <Connexion />,
+        children: [
+            { path: "login", element: <Login /> },
+            { path: "signup", element: <Signup /> },
+        ],
+    },
 
-  // APP TABS
-  {
-    path: "/clonea/app",
-    element: <Tabs />,
-    children: [
-      { index: true, element: <Home /> },
-      { path: "history", element: <History /> },
-      { path: "scan", element: <Scan /> },
-      { path: "settings", element: <Settings /> },
-      { path: "templates", element: <Templates /> },
-    ],
-  },
+    // APP TABS
+    {
+        path: "/clonea/app",
+        element: <Tabs />,
+        children: [
+            { index: true, element: <Home /> },
+            { path: "history", element: <History /> },
+            { path: "settings", element: <Settings /> },
+            { path: "templates", element: <Templates /> },
+        ],
+    },
+    { path: "/clonea/scan", element: <Scan /> },
 
-  // STACK (création / analyse / résultats)
-  {
-    path: "/clonea/stack",
-    element: <Stack />,
-    children: [
-      { index: true, element: <Creation /> },
-      { path: "analysis", element: <Analysis /> },
-      { path: "results", element: <Results /> },
-    ],
-  },
+    // STACK (création / analyse / résultats)
+    {
+        path: "/clonea/stack",
+        element: <Stack />,
+        children: [
+            { index: true, element: <Creation /> },
+            { path: "analysis", element: <Analysis /> },
+            { path: "results", element: <Results /> },
+        ],
+    },
 
-  // 404
-  {
-    path: "*",
-    element: <E404 />,
-  },
+    // 404
+    {
+        path: "*",
+        element: <E404 />,
+    },
 ]);
 
 // ── EXPORT APP ROUTER ─────────────────────
 export default function AppRouter() {
-  return (
-    <Suspense fallback={<PageLoader />}>
-      <RouterProvider router={router} />
-    </Suspense>
-  );
+    return (
+        <Suspense fallback={<PageLoader />}>
+            <RouterProvider router={router} />
+        </Suspense>
+    );
 }
+
